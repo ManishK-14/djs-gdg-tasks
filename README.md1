@@ -1,0 +1,67 @@
+# 🏎️ F1 Data Analysis & Modeling App
+
+This Streamlit app allows users to **perform exploratory data analysis (EDA)** and **predict F1 race outcomes** using machine learning. Upload your CSV file with F1 race data and interactively explore the data, visualize trends, and run a Logistic Regression model to predict race finishes.
+
+---
+
+## Features
+
+### 1. **Data Preview**
+- View the first few rows of your dataset.
+- Check summary statistics.
+- Inspect missing values and data types.
+
+### 2. **Visualizations**
+- Histogram of points scored by drivers.
+- Boxplot of race completion times.
+- Scatter plot: Position vs Points.
+- Average points per year.
+- Top 10 drivers by total points.
+- Target finish distribution.
+- Distribution of fastest lap speed.
+- Top 10 driver nationalities.
+
+> All plots are interactive; you can select which visualizations to display via the sidebar.
+
+### 3. **Modeling**
+- Logistic Regression to predict `target_finish` (binary outcome).
+- Choose features for modeling.
+- Performance metrics:
+  - Accuracy
+  - Precision, Recall, F1-score
+  - Confusion Matrix
+  - ROC-AUC Score
+
+---
+### 4. **Requirements**
+
+Python 3.8+
+
+Streamlit
+
+Pandas
+
+NumPy
+
+Matplotlib
+
+Seaborn
+
+scikit-learn
+
+### **Usage**
+
+Open the sidebar and upload your F1 CSV dataset.
+
+Navigate through tabs:
+
+Data Preview: Inspect dataset.
+
+Plots: Select which visualizations to display.
+
+Modeling: Select features and run Logistic Regression to predict target finish.
+
+Explore interactive plots and review model metrics.
+
+### **About**
+This app was created as part of an exploratory data analysis and machine learning project on F1 race results. It demonstrates how EDA and predictive modeling can be combined in an interactive web application using Streamlit.
