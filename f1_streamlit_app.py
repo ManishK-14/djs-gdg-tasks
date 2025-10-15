@@ -15,20 +15,15 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 st.title("🏎️ F1 Data Analysis & Modeling")
-st.markdown("Upload your F1 CSV and explore data, plots, and predictive modeling in one place.")
+st.markdown("Upload the f1 CSV and explore data, plots, and predictive modeling in one place.")
 
-# --- Sidebar ---
 st.sidebar.header("Controls")
 uploaded_file = st.sidebar.file_uploader("Upload F1 CSV", type=["csv"])
 
 if uploaded_file is not None:
-    # --- Load data ---
     f1_comp = pd.read_csv(uploaded_file, index_col=0)
 
-    # --- Tabs ---
     tab1, tab2, tab3 = st.tabs(["📄 Data Preview", "📊 Plots", "🤖 Modeling"])
-
-    # Tab 1: Data
     with tab1:
         st.subheader("Raw Data")
         st.dataframe(f1_comp.head())
@@ -45,7 +40,7 @@ if uploaded_file is not None:
 
         st.write(f1_comp.isnull().sum())
 
-        # Fill missing values
+        # Handling missing values
         f1_comp['points'] = f1_comp['points'].fillna(f1_comp['points'].mean())
         f1_comp['laps'] = f1_comp['laps'].fillna(f1_comp['laps'].mode()[0])
         f1_comp['milliseconds'] = f1_comp['milliseconds'].fillna(f1_comp['milliseconds'].median())
@@ -168,3 +163,4 @@ if uploaded_file is not None:
 
         else:
             st.info("No 'target_finish' column found for modeling.")
+
