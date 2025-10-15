@@ -46,7 +46,7 @@ if uploaded_file is not None:
         f1_comp['milliseconds'] = f1_comp['milliseconds'].fillna(f1_comp['milliseconds'].median())
         f1_comp['fastestLapSpeed'] = f1_comp['fastestLapSpeed'].fillna(f1_comp['fastestLapSpeed'].mean())
 
-        st.write("✅ After Filling Missing Values")
+        st.write("After Filling Missing Values")
         st.write(f1_comp.isnull().sum())
 
     #Tab 2: Plots
@@ -163,4 +163,5 @@ if uploaded_file is not None:
 
         else:
             st.info("No 'target_finish' column found for modeling.")
+
 
