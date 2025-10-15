@@ -10,11 +10,11 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 
 # --- Page settings ---
 st.set_page_config(
-    page_title="🏎️ F1 Data Analysis",
+    page_title="F1 Data Analysis",
     layout="wide",
     initial_sidebar_state="expanded"
 )
-st.title("🏎️ F1 Data Analysis & Modeling")
+st.title(" F1 Data Analysis & Modeling")
 st.markdown("Upload the f1 CSV and explore data, plots, and predictive modeling in one place.")
 
 st.sidebar.header("Controls")
@@ -23,7 +23,7 @@ uploaded_file = st.sidebar.file_uploader("Upload F1 CSV", type=["csv"])
 if uploaded_file is not None:
     f1_comp = pd.read_csv(uploaded_file, index_col=0)
 
-    tab1, tab2, tab3 = st.tabs(["📄 Data Preview", "📊 Plots", "🤖 Modeling"])
+    tab1, tab2, tab3 = st.tabs(["Data Preview", "Plots", "Modeling"])
     with tab1:
         st.subheader("Raw Data")
         st.dataframe(f1_comp.head())
@@ -163,5 +163,6 @@ if uploaded_file is not None:
 
         else:
             st.info("No 'target_finish' column found for modeling.")
+
 
 
